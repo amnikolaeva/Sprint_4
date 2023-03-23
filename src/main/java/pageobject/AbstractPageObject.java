@@ -15,6 +15,14 @@ public abstract class AbstractPageObject {
     }
 
     /**
+     * Кликнуть по элементу
+     * @param element элемент
+     */
+    protected void clickElement(By element) {
+        driver.findElement(element).click();
+    }
+
+    /**
      * Проверить, что элемент доступен
      * @param element проверяемый элемент
      */
@@ -24,4 +32,12 @@ public abstract class AbstractPageObject {
         Assert.assertTrue(driver.findElement(element).isEnabled());
     }
 
+    /**
+     * Получить текст элемента
+     * @param element элемент
+     * @return текст элемента
+     */
+    protected String  getTextOfElement(By element){
+        return driver.findElement(element).getText();
+    }
 }
